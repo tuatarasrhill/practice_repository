@@ -9,6 +9,9 @@ apples <- read.csv('data/apples_data.csv')
 apples$log_weight <- log(apples$weight)
 
 # graphing
+library(ggplot2)
+
 png('figs/hist_apple_weight.png')
-hist(apples$weight)
+ggplot(apples, aes(weight)) + geom_histogram()
+# hist(apples$weight)
 dev.off()
